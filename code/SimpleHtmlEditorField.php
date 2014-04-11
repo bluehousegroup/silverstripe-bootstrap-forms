@@ -31,7 +31,7 @@ class SimpleHtmlEditorField extends TextareaField {
 	 * @return SimpleHtmlEditorField
 	 */
 	public function setButtons($buttons) {
-		return $this->setAttribute('data-buttons', $buttons);		
+		return $this->setAttribute('data-buttons', $buttons);
 	}
 	
 
@@ -43,7 +43,7 @@ class SimpleHtmlEditorField extends TextareaField {
 	 * @return SimpleHtmlEditorField
 	 */
 	public function setBlockFormats($formats) {
-		return $this->setAttribute('data-blockformats', $formats);		
+		return $this->setAttribute('data-blockformats', $formats);
 	}
 
 
@@ -55,7 +55,7 @@ class SimpleHtmlEditorField extends TextareaField {
 	 * @return SimpleHtmlEditorField
 	 */
 	public function setCSS($css) {
-		return $this->setAttribute('data-css', $css);		
+		return $this->setAttribute('data-css', $css);
 	}
 
 

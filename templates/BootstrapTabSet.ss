@@ -18,4 +18,3 @@
 		<% end_if %>
 	<% end_loop %>
 </div>
-

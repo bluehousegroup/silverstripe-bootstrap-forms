@@ -11,8 +11,6 @@
  * @package boostrap_forms
  */
 class BootstrapForm extends Form {
-	
-
 
 
 	/**
@@ -21,14 +19,11 @@ class BootstrapForm extends Form {
 	protected $template = "BootstrapForm";
 
 
-
 	/**
 	 * @var string The layout of the form.
 	 * @see BootstrapForm::setLayout()
 	 */
-	protected $formLayout = "vertical";
-
-
+	protected $formLayout = "";
 
 
 	/**
@@ -40,8 +35,6 @@ class BootstrapForm extends Form {
 	public static function set_bootstrap_included($bool = true) {
 		Config::inst()->set("BootstrapForm","bootstrap_included",$bool);
 	}
-
-
 
 
 	/**
@@ -67,8 +60,6 @@ class BootstrapForm extends Form {
 	}
 
 
-
-
 	/**
 	 * Applies the Bootstrap transformation to the fields and actiosn
 	 * of the form
@@ -80,7 +71,6 @@ class BootstrapForm extends Form {
 		$this->applyBootstrapToFieldList($this->Actions());
 		return $this;
 	}
-
 
 
 	/**
@@ -97,15 +87,13 @@ class BootstrapForm extends Form {
 	}
 
 
-
 	/**
 	 * Sets the desired layout of the form. Options include:
-	 *		- "vertical" (default)
-	 *		- "horizontal"
-	 *		- "inline"
-	 *		- "search"
+	 *		- "" (default vertical)
+	 *		- "form-horizontal"
+	 *		- "form-inline"
 	 *
-	 * @todo Add template support for "inline"
+	 * @todo Add template support for "form-inline"
 	 * @param string $layout The desired layout to use
 	 * @return BootstrapForm
 	 */
@@ -113,7 +101,6 @@ class BootstrapForm extends Form {
 		$this->formLayout = trim(strtolower($layout));
 		return $this;
 	}
-
 
 
 	/**
@@ -124,7 +111,6 @@ class BootstrapForm extends Form {
 	public function addWell() {
 		return $this->addExtraClass("well");
 	}
-
 
 
 	/**
@@ -141,12 +127,9 @@ class BootstrapForm extends Form {
 			Requirements::javascript(THIRDPARTY_DIR."/jquery/jquery.js");
 		}
 		Requirements::javascript(BOOTSTRAP_FORMS_DIR."/javascript/bootstrap_forms.js");
-		$this->addExtraClass("form-{$this->formLayout}");
+		$this->addExtraClass($this->formLayout);
 		$this->applyBootstrap();
 		return parent::forTemplate();
 	}
-
-
-
 
 }

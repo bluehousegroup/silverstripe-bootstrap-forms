@@ -17,7 +17,7 @@ class BootstrapFormField extends DataExtension {
 
 
 	protected $holderClasses = array(
-		"control-group"
+		"form-group"
 	);
 
 
@@ -31,7 +31,7 @@ class BootstrapFormField extends DataExtension {
 		return $this->owner->setAttribute("placeholder",$text);
 	}
 
-	
+
 	/**
 	 * Adds a block of help text to the form field. (HTML safe).
 	 * By default, this text appears below a field and its label.
@@ -43,21 +43,6 @@ class BootstrapFormField extends DataExtension {
 		$this->owner->HelpText = $text;
 		return $this->owner;
 	}
-
-
-
-	/**
-	 * Adds a line of inline help text to a form field (HTML safe).
-	 * By default, this text appears to the right of a form field.
-	 *
-	 * @param string $text The text to add
-	 * @return BootstrapFormField
-	 */
-	public function addInlineHelpText($text) {
-		$this->owner->InlineHelpText = $text;
-		return $this->owner;
-	}
-
 
 
 	/**
@@ -74,7 +59,6 @@ class BootstrapFormField extends DataExtension {
 	}
 
 
-
 	/**
 	 * Returns the list of attributes suitable for an HTML tag
 	 *
@@ -88,6 +72,7 @@ class BootstrapFormField extends DataExtension {
 		return $ret;
 	}
 
+
 	/**
 	 * Allows adding custom classes to the holder 
 	 * 
@@ -100,6 +85,7 @@ class BootstrapFormField extends DataExtension {
 		return $this->owner;
 	}
 
+
 	/**
 	 * returns the holder classes to be used in templates
 	 * also triggers checking for error messages
@@ -110,6 +96,7 @@ class BootstrapFormField extends DataExtension {
 		$this->loadErrorMessage();
 		return implode(" ",$this->holderClasses);
 	}
+
 
 	/**
 	 * checks for error messages in owner form field
@@ -123,5 +110,5 @@ class BootstrapFormField extends DataExtension {
 			$this->addHelpText($this->owner->message);
 		}
 	}
-	
+
 }

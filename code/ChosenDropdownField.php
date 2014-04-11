@@ -26,7 +26,7 @@ class ChosenDropdownField extends DropdownField {
 	 * @return ChosenDropdownField
 	 */
 	public function setSearchThreshold($num) {
-		return $this->setAttribute('data-search-threshold', $num);		
+		return $this->setAttribute('data-search-threshold', $num);
 	}
 
 

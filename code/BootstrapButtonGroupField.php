@@ -23,7 +23,6 @@ class BootstrapButtonGroupField extends FormField
 	}
 
 
-
 	public function getOptions()
 	{
 		$options = ArrayList::create();
@@ -35,9 +34,8 @@ class BootstrapButtonGroupField extends FormField
 			)));
 		}
 		
-		return $options;		
+		return $options;
 	}
-
 
 
 	public function Field($attributes = array ())
@@ -45,7 +43,5 @@ class BootstrapButtonGroupField extends FormField
 		Requirements::javascript(BOOTSTRAP_FORMS_DIR."/javascript/bootstrap_forms.js");
 		return $this->renderWith('BootstrapButtonGroupField');
 	}
-
-
 
 }

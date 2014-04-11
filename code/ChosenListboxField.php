@@ -8,7 +8,6 @@ class ChosenListboxField extends ListboxField {
 	public static $default_search_threshold = 12;
 
 
-
 	/**
 	 * Sets the search threshold for this dropdown
 	 *
@@ -16,20 +15,19 @@ class ChosenListboxField extends ListboxField {
 	 * @return ChosenListboxField
 	 */
 	public function setSearchThreshold($num) {
-		return $this->setAttribute('data-search-threshold', $num);		
+		return $this->setAttribute('data-search-threshold', $num);
 	}
-    
-    
-    /**
-     * Sets the Placeholder if the Field is empty
-     * 
-     * @param string $str
-     * @return ChosenListboxField
-     */
-    public function setPlaceholder($str) {
-        return $this->setAttribute('data-placeholder', $str);
-    }
 
+
+		/**
+		 * Sets the Placeholder if the Field is empty
+		 * 
+		 * @param string $str
+		 * @return ChosenListboxField
+		 */
+		public function setPlaceholder($str) {
+				return $this->setAttribute('data-placeholder', $str);
+		}
 
 
 	/**
@@ -47,5 +45,5 @@ class ChosenListboxField extends ListboxField {
 		}
 		return parent::FieldHolder($attributes);
 	}
-    
+
 }
