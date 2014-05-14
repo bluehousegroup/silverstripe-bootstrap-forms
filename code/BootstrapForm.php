@@ -25,6 +25,34 @@ class BootstrapForm extends Form {
 	 */
 	protected $formLayout = "";
 
+	/**
+	 * @var string The label column width.
+	 * Only applies to horizontal layouts.
+	 * @see BootstrapForm::setLabelWidth()
+	 */
+	protected $labelWidth = "col-sm-2";
+
+	/**
+	 * @var string The field column width.
+	 * Only applies to horizontal layouts.
+	 * @see BootstrapForm::setFieldWidth()
+	 */
+	protected $fieldWidth = "col-sm-10";
+
+	/**
+	 * @var string The action field column width.
+	 * Only applies to horizontal layouts.
+	 * @see BootstrapForm::setActionWidth()
+	 */
+	protected $actionWidth = "col-sm-10";
+
+	/**
+	 * @var string The action field column offset width.
+	 * Only applies to horizontal layouts.
+	 * @see BootstrapForm::setActionOffset()
+	 */
+	protected $actionOffset = "col-sm-offset-2";
+
 
 	/**
 	 * Sets form to disable/enable inclusion of Bootstrap CSS
@@ -100,6 +128,99 @@ class BootstrapForm extends Form {
 	public function setLayout($layout) {
 		$this->formLayout = trim(strtolower($layout));
 		return $this;
+	}
+
+	/**
+	 * Sets the desired column width of the label. Ex:
+	 * 		- "col-sm-2"
+	 *
+	 * @param string $width The desired width class to use
+	 * @return BootstrapForm
+	 */
+	public function setLabelWidth($width) {
+		$this->labelWidth = trim(strtolower($width));
+		return $this;
+	}
+
+	/**
+	 * Sets the desired column width of the field. Ex:
+	 * 		- "col-sm-10"
+	 *
+	 * @param string $width The desired width class to use
+	 * @return BootstrapForm
+	 */
+	public function setFieldWidth($width) {
+		$this->fieldWidth = trim(strtolower($width));
+		return $this;
+	}
+
+	/**
+	 * Sets the desired action column width of the field. Ex:
+	 * 		- "col-sm-10"
+	 *
+	 * @param string $width The desired width class to use
+	 * @return BootstrapForm
+	 */
+	public function setActionWidth($width) {
+		$this->actionWidth = trim(strtolower($width));
+		return $this;
+	}
+
+	/**
+	 * Sets the desired action column offset width of the field. Ex:
+	 * 		- "col-sm-offset-2"
+	 *
+	 * @param string $width The desired width class to use
+	 * @return BootstrapForm
+	 */
+	public function setActionOffset($width) {
+		$this->actionOffset = trim(strtolower($width));
+		return $this;
+	}
+
+	/**
+	 * Gets the layout of the form.
+	 * 
+	 * @return string
+	 */
+	public function FormLayout() {
+		return $this->formLayout;
+	}
+
+	/**
+	 * Gets the column width of the label.
+	 *
+	 * @return string
+	 */
+	public function LabelWidth() {
+		return $this->labelWidth;
+	}
+
+	/**
+	 * Gets the column width of the field.
+	 *
+	 * @return string
+	 */
+	public function FieldWidth() {
+		return $this->fieldWidth;
+	}
+
+	/**
+	 * Gets the column width of the actions field.
+	 *
+	 * @return string
+	 */
+	public function ActionWidth() {
+		return $this->actionWidth;
+	}
+
+	/**
+	 * Gets the column width of the actions offset.
+	 *
+	 * @return string
+	 */
+	public function ActionOffset() {
+		return $this->actionOffset;
 	}
 
 
